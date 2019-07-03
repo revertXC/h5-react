@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.less';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+import {HomeRouter} from './components/home/router';
+import {TestRouter} from './components/test/router';
+
 
 function App() {
+
+  const routerDatas = [...HomeRouter, ...TestRouter];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+          {
+            routerDatas && routerDatas.map(item =>
+                <Link key={`link${item.path}`} to={item.path}>{item.name}</Link>
+            )
+          }
+          {
+              routerDatas && routerDatas.map(item =>
+                  <Route key={`Route${item.path}`} exact={item.exact} path={item.path} component={item.component}/>
+              )
+          }
+      </BrowserRouter>
     </div>
   );
 }
