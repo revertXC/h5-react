@@ -13,16 +13,18 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-          {
-              routerDatas && routerDatas.map(item =>
-                  <Link key={`link${item.path}`} to={item.path}>{item.name}</Link>
-              )
-          }
-          {
-              routerDatas && routerDatas.map(item =>
-                  <Route key={`Route${item.path}`} exact={item.exact} path={item.path} component={item.component}/>
-              )
-          }
+          <div>
+              {
+                  routerDatas && routerDatas.map(item =>
+                      <Link key={`link${item.path}`} to={item.path}>{item.name}</Link>
+                  )
+              }
+              {
+                  routerDatas && routerDatas.map(item =>
+                      <Route key={`RouteStr${item.path}`} exact={item.exact} path={item.path} component={item.component}/>
+                  )
+              }
+          </div>
       </BrowserRouter>
     </div>
   );
