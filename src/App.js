@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
           {
-            routerDatas && routerDatas.map(item =>
-                <Link key={`link${item.path}`} to={item.path}>{item.name}</Link>
-            )
+              routerDatas && routerDatas.map(item =>
+                  <Link key={`link${item.path}`} to={item.path}>{item.name}</Link>
+              )
           }
           {
               routerDatas && routerDatas.map(item =>
