@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.less';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-
-import {HomeRouter} from './components/home/router';
-import {TestRouter} from './components/test/router';
-
+import {HomeRouter} from './modules/home/router';
+import {TestRouter} from './modules/test/router';
 
 function App() {
 

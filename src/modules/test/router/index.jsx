@@ -1,4 +1,4 @@
-import asyncComponent from './../../../common/asyncComponent';
+import asyncComponent from '../../../common/asyncComponent/index';
 
 const Test1 = asyncComponent(() => import('./../test1'));
 const Test2 = asyncComponent(() => import('./../test2'));
