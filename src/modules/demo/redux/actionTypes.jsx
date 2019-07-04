@@ -3,4 +3,4 @@
 // export const TOGGLE_TODO = "TOGGLE_TODO";
 // export const SET_FILTER = "SET_FILTER";
 
-export const HOME_PRINT = "HOME_PRINT";
+export const DEMO_PRINT = "DEMO_PRINT";

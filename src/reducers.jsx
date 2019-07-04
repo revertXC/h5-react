@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import Home from './modules/home/redux/reducer';
+import Demo from './modules/demo/redux/reducer';
 
 export default combineReducers({
-    Home,
+    Demo,
 });

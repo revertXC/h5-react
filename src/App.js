@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.less';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import {HomeRouter} from './modules/home/router';
+import {DemoRouter} from './modules/demo/router';
 import {TestRouter} from './modules/test/router';
 
 function App() {
 
-  const routerDatas = [...HomeRouter, ...TestRouter];
+  const routerDatas = [...DemoRouter, ...TestRouter];
 
   return (
     <div className="App">

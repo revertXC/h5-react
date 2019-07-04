@@ -1,9 +1,9 @@
-import {HOME_PRINT } from "./actionTypes";
+import {DEMO_PRINT } from "./actionTypes";
 
 
 
 export const printText = content => ({
-    type: HOME_PRINT,
+    type: DEMO_PRINT,
     payload: {
         content
     }

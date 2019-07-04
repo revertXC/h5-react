@@ -1,10 +1,10 @@
 //type
-import {HOME_PRINT } from "../actionTypes";
+import {DEMO_PRINT } from "../actionTypes";
 
 const initialState = {};
 export default function(state = initialState, action) {
     switch (action.type) {
-        case HOME_PRINT: {
+        case DEMO_PRINT: {
             const { content } = action.payload;
             return {
                 ...state,

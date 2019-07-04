@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import { printText} from "./redux/actions";
 import { InputItem} from 'antd-mobile';
 
-class Home extends React.Component{
+class Demo extends React.Component{
     constructor(props){
         super(props);
         // console.log(this.props);
         this.state = {
             input: 'Hello Redux',
-            outInput: ''
+            outInput: this.props.outInput || ''
         };
     }
     componentDidMount(){
@@ -19,9 +19,14 @@ class Home extends React.Component{
         //     console.log(res);
         // })
     }
+    componentWillUnmount(){
+        this.setState({
+            outInput: '',
+        })
+    }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
-        if(nextProps.print_text != this.state.outInput){
+        // console.log(nextProps)
+        if(nextProps.print_text && nextProps.print_text != this.state.outInput){
             this.setState({
                 outInput: nextProps.print_text
             })
@@ -57,13 +62,13 @@ class Home extends React.Component{
 }
 const mapStateToProps = state => {
     // console.log("mapStateToProps state", state)
-    const {Home} = state;
+    const {Demo} = state;
     return {
-        print_text: Home && Home.text ? Home.text.content : ''
+        print_text: Demo && Demo.text ? Demo.text.content : ''
     };
 };
 
 export default connect(
     mapStateToProps,
     { printText}
-)(Home);;
+)(Demo);;
