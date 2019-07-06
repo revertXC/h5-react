@@ -59,10 +59,11 @@
     "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "startPro": "set NODE_ENV=production && node scripts/start.js",
-    "build": "react-app-rewired build",
-    "buildPro": "set NODE_ENV=production && node scripts/build.js",
+    "start": "cross-env REACT_APP_NODE_ENV=development react-app-rewired start",
+    "startPro": "cross-env REACT_APP_NODE_ENV=production react-app-rewired start",
+    "build": "cross-env REACT_APP_NODE_ENV=development react-app-rewired build",
+    "buildPro": "cross-env REACT_APP_NODE_ENV=production react-app-rewired build",
+    "buildTest": "set NODE_ENV=test && react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom"
   },
   "eslintConfig": {
@@ -137,6 +138,7 @@
     "antd-mobile": "^2.2.14",
     "axios": "^0.19.0",
     "babel-plugin-import": "^1.12.0",
+    "cross-env": "^5.2.0",
     "customize-cra": "^0.2.14",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",

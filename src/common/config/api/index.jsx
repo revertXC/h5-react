@@ -1,6 +1,7 @@
 const env = process.env;
-const NODE_ENV = env.NODE_ENV;
-
+const NODE_ENV = env.REACT_APP_NODE_ENV;
+console.log(NODE_ENV)
+console.log(env)
 let base_ip = ''; //接口ip
 let base_img_ip = ''; //图片ip
 
